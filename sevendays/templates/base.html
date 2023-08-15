@@ -34,8 +34,15 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
+        <main>
         {% block content %}{% endblock %}
+        </main>
 
+        <footer>
+        Custom footer
+        </footer>
+
+        {# Global javascript #}
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/sevendays.js' %}"></script>
 

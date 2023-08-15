@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load static wagtailimages_tags %}
+{% load static wagtailimages_tags wagtailcore_tags %}
 
 {% block body_class %}template-genericpage{% endblock %}
 
@@ -18,7 +18,7 @@
     <br>
     <br>
     {% image page.banner_image fill-1400x250 as img %}
-    <img src="{{ img.url }}" alt="{{ img.alt }}">
+    <img src="{{ img.url }}" alt="{{ img.alt }}" style='width: 100%;margin: auto;'>
 
     <br>
     <h3>
@@ -42,5 +42,7 @@
     <br>
     {% image page.author.image fill-250x250 as auth_img %}
     <img src="{{ auth_img.url }}" alt="{{ auth_img.alt }}">
+
+    {% include_block page.body %}
 
 {% endblock content %}
