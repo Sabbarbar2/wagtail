@@ -39,7 +39,9 @@
         </main>
 
         <footer>
-        Custom footer
+            {% if settings.site_seetings.SocialMediaSettings.instagram %}
+                <a href= "{{ settings.site_settings.SocialMediaSettings.instagram }}" class="footer-inst"> Instagram </a>
+            {% endif %}
         </footer>
 
         {# Global javascript #}
